@@ -1,0 +1,76 @@
+.push-notification {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transform: translateY(-120%);
+    transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.push-notification.show {
+    transform: translateY(0);
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.notifications-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.notifications-view h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.notification-item {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+}
+
+.notification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(149, 157, 208, 0.15);
+}
+
+.notification-time {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.weather-alert {
+    border-left: 4px solid var(--warning-color);
+}
+
+.transport-alert {
+    border-left: 4px solid var(--success-color);
+}

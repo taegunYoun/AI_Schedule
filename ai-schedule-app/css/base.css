@@ -1,0 +1,38 @@
+:root {
+    --primary-bg: #F0F2FF;
+    --card-bg: #FFFFFF;
+    --secondary-bg: #E8ECFF;
+    --accent-color: #1d44d0;
+    --accent-light: #F0EEFF;
+    --text-primary: #333344;
+    --text-secondary: #6F7789;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
+    --danger-color: #FF5252;
+    --border-radius: 20px;
+    --card-shadow: 0 8px 20px rgba(149, 157, 208, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .app-container {
+        max-width: 100%;
+        height: 100vh;
+    }
+}

@@ -1,0 +1,229 @@
+.calendar-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+}
+
+.month-selector {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 15px 0;
+    margin-bottom: 10px;
+}
+
+.calendar-day-name {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.calendar-day {
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.calendar-day:hover {
+    background-color: var(--accent-light);
+    transform: scale(1.1);
+}
+
+.calendar-day.current {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.calendar-day.selected {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 700;
+}
+
+.events-list {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.events-list h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 18px;
+    border-left: 4px solid var(--accent-color);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    margin-bottom: 10px;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(149, 157, 208, 0.15);
+}
+
+.event-time {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.event-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.event-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.map-view {
+    width: 100%;
+    height: 180px;
+    background-color: #E8ECFF;
+    border-radius: 15px;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: inset 0 0 10px rgba(142, 130, 255, 0.1);
+}
+
+.map-view:hover {
+    box-shadow: inset 0 0 15px rgba(142, 130, 255, 0.2);
+}
+
+.map-marker {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 5px rgba(142, 130, 255, 0.2);
+}
+
+.map-marker::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--accent-color);
+}
+
+.map-route {
+    position: absolute;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.transportation-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scroll-behavior: smooth;
+    margin-bottom: 0px;
+}
+
+.transportation-options::-webkit-scrollbar {
+    height: 5px;
+}
+
+.transportation-options::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+    border-radius: 10px;
+}
+
+.transportation-options::-webkit-scrollbar-thumb {
+    background: var(--accent-light);
+    border-radius: 10px;
+}
+
+.transport-option {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.transport-option:hover {
+    transform: translateY(-3px);
+}
+
+.transport-option.selected {
+    background-color: var(--accent-light);
+    border: 1px solid var(--accent-color);
+}
+
+.transport-time {
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.transport-details {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

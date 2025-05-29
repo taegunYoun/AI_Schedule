@@ -1,0 +1,108 @@
+.chat-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.chat-message {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    position: relative;
+    animation: messageAppear 0.3s ease-out;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: var(--transition);
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user-message {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 18px 18px 0 18px;
+    margin-left: auto;
+    align-self: flex-end;
+    box-shadow: 0 4px 12px rgba(142, 130, 255, 0.25);
+}
+
+.app-message {
+    background-color: var(--card-bg);
+    border-radius: 18px 18px 18px 0;
+    box-shadow: var(--card-shadow);
+}
+
+.chat-input-container {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    background-color: var(--card-bg);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(149, 157, 208, 0.15);
+    transition: var(--transition);
+    z-index: 100;
+}
+
+.chat-input-container:focus-within {
+    box-shadow: 0 6px 20px rgba(142, 130, 255, 0.2);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 24px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-primary);
+    outline: none;
+    font-size: 1rem;
+}
+
+.chat-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.send-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.send-button:hover {
+    background-color: #7B6FEE;
+    transform: scale(1.05);
+}
