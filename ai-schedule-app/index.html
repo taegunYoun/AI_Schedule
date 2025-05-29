@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI_Sheduler</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- 여기 전체 HTML 본문을 붙여넣으세요 (기존 코드에서) -->
+    <div class="status-bar">
+        <span class="time">15:39</span>
+        <div>
+            <span>Youn</span>
+        </div>
+    </div>
+    
+    <div class="app-header">
+        <div class="app-title">AI_Scheduler</div>
+        <button class="menu-button"></button>
+    </div>
+    
+    <div class="tab-container">
+        <a href="#" class="tab-item active" id="chatTab">
+            <div class="tab-icon">
+                <img src="png/chat-icon.png" alt="채팅 아이콘" width="24" height="24">
+            </div>
+            <div class="tab-label">채팅</div>
+        </a>
+        <a href="#" class="tab-item" id="calendarTab">
+            <div class="tab-icon">
+                <img src="png/calendar-icon.png" alt="일정 아이콘" width="24" height="24">
+            </div>
+            <div class="tab-label">일정</div>
+        </a>
+        <a href="#" class="tab-item" id="notificationsTab">
+            <div class="tab-icon">
+                <img src="png/notification-icon.png" alt="알림 아이콘" width="24" height="24">
+            </div>
+            <div class="tab-label">알림</div>
+        </a>
+        <a href="#" class="tab-item" id="settingsTab">
+            <div class="tab-icon">
+                <img src="png/settings-icon.png" alt="설정 아이콘" width="24" height="24">
+            </div>
+            <div class="tab-label">설정</div>
+        </a>
+    </div>
+    
+    
+    <div class="app-content">
+        <div class="chat-container" id="chatView">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 초기 메시지 -->
+                <div class="chat-message app-message">
+                    안녕하세요! 일정을 입력하시면 일정 등록 후 교통 알림을 설정해 드릴게요.<br>
+                    (ex: 5월5일 오후3시 강남역 미팅)
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="일정을 입력하세요...">
+                <button class="send-button" id="sendButton">→</button>
+            </div>
+        </div>
+        
+        <div class="calendar-view" id="calendarView">
+            <div class="calendar-header">
+                <div class="month-selector">2025년 4월</div>
+            </div>
+            
+            <div class="calendar-grid">
+                <div class="calendar-day-name">일</div>
+                <div class="calendar-day-name">월</div>
+                <div class="calendar-day-name">화</div>
+                <div class="calendar-day-name">수</div>
+                <div class="calendar-day-name">목</div>
+                <div class="calendar-day-name">금</div>
+                <div class="calendar-day-name">토</div>
+                
+                <!-- 달력 일자 -->
+                <!-- 1주차 -->
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+                
+                <!-- 2주차 -->
+                <div class="calendar-day">6</div>
+                <div class="calendar-day current">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+                
+                <!-- 3주차 -->
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                
+                <!-- 4주차 -->
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                
+                <!-- 5주차 -->
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+            </div>
+            
+            <div class="events-list">
+                <h3>4월 23일 일정</h3>
+                
+
+            </div>
+        </div>
+        
+        <!-- 알림 화면 -->
+        <div class="notifications-view" id="notificationsView">
+            <h3>알림</h3>
+            
+            <div class="notification-item">
+                <div class="notification-time">오늘, 오후 2:30</div>
+                <div class="event-title">출발 알림</div>
+                <div>강남역 스터디까지 26분 소요 예정입니다. 지금 출발하세요!</div>
+            </div>
+            
+            <div class="notification-item" style="border-left-color: var(--warning-color);">
+                <div class="notification-time">오늘, 오후 12:15</div>
+                <div class="event-title">날씨 알림</div>
+                <div>오후에 비 예보가 있습니다. 우산을 챙기세요!</div>
+            </div>
+            
+            <div class="notification-item" style="border-left-color: #4a6fa5;">
+                <div class="notification-time">어제, 오후 5:30</div>
+                <div class="event-title">교통 지연</div>
+                <div>2호선 지연으로 인해 도착 예정 시간이 10분 지연됩니다.</div>
+            </div>
+        </div>
+        
+        <!-- 설정 화면 -->
+        <div class="settings-view" id="settingsView">
+            <h3>설정</h3>
+            
+            <div class="settings-group">
+                <div class="settings-title">알림 설정</div>
+                
+                <div class="settings-option">
+                    <div>출발 알림</div>
+                    <div class="toggle active" id="departureToggle"></div>
+                </div>
+                
+                <div class="settings-option">
+                    <div>교통 정보 업데이트</div>
+                    <div class="toggle active" id="trafficToggle"></div>
+                </div>
+                
+                <div class="settings-option">
+                    <div>날씨 알림</div>
+                    <div class="toggle active" id="weatherToggle"></div>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <div class="settings-title">계정 설정</div>
+                
+                <div class="settings-option">
+                    <div>위치 정보</div>
+                    <div class="toggle active" id="locationToggle"></div>
+                </div>
+                
+                <div class="settings-option">
+                    <div>라이트 모드</div>
+                    <div class="toggle active" id="lightModeToggle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 수동 일정 입력 모달 -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-header">
+            <span class="modal-title">새 일정 추가</span>
+            <button class="close-modal" id="closeModal">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="form-label">일정 이름</label>
+                <input type="text" class="form-input" placeholder="일정 이름을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label class="form-label">날짜</label>
+                <input type="date" class="form-input" value="2025-04-23">
+            </div>
+            <div class="form-group">
+                <label class="form-label">시간</label>
+                <input type="time" class="form-input" value="15:00">
+            </div>
+            <div class="form-group">
+                <label class="form-label">장소</label>
+                <input type="text" class="form-input" placeholder="장소를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label class="form-label">메모</label>
+                <input type="text" class="form-input" placeholder="메모를 입력하세요">
+            </div>
+            <button class="form-submit" id="saveSchedule">일정 저장</button>
+        </div>
+    </div>
+    
+    <!-- 모달 오버레이 -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- 푸시 알림 모의 -->
+    <div class="push-notification" id="pushNotification">
+        <div class="emoji">🚇</div>
+        <div class="notification-content">
+            <div class="notification-title">지금 출발하세요!</div>
+            <div>지하철 5분 후 도착, 강남역까지 26분 소요 예정</div>
+        </div>
+    </div>
+</div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
